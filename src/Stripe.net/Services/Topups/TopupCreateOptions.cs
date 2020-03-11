@@ -24,5 +24,8 @@ namespace Stripe
 
         [JsonProperty("statement_descriptor")]
         public string StatementDescriptor { get; set; }
+
+        [JsonProperty("transfer_group")]
+        public string TransferGroup { get; set; }
     }
 }

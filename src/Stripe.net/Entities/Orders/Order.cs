@@ -54,7 +54,11 @@ namespace Stripe
 
         #region Expandable Customer
         [JsonIgnore]
-        public string CustomerId { get; set; }
+        public string CustomerId
+        {
+            get => this.InternalCustomer?.Id;
+            set => this.InternalCustomer = SetExpandableFieldId(value, this.InternalCustomer);
+        }
 
         [JsonIgnore]
         public Customer Customer
@@ -75,7 +79,7 @@ namespace Stripe
         public string ExternalCouponCode { get; set; }
 
         [JsonProperty("items")]
-        public List<OrderItem> OrderItems { get; set; }
+        public List<OrderItem> Items { get; set; }
 
         [JsonProperty("livemode")]
         public bool Livemode { get; set; }
@@ -103,7 +107,7 @@ namespace Stripe
 
         [JsonProperty("updated")]
         [JsonConverter(typeof(DateTimeConverter))]
-        public DateTime Updated { get; set; }
+        public DateTime? Updated { get; set; }
 
         [JsonProperty("upstream_id")]
         public string UpstreamId { get; set; }

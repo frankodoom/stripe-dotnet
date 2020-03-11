@@ -14,13 +14,13 @@ namespace Stripe
         public string Object { get; set; }
 
         [JsonProperty("amount")]
-        public long? Amount { get; set; }
+        public long Amount { get; set; }
 
         [JsonProperty("amount_capturable")]
-        public long? AmountCapturable { get; set; }
+        public long AmountCapturable { get; set; }
 
         [JsonProperty("amount_received")]
-        public long? AmountReceived { get; set; }
+        public long AmountReceived { get; set; }
 
         #region Expandable Application
         [JsonIgnore]

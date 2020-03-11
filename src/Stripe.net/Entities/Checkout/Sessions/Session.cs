@@ -23,7 +23,6 @@ namespace Stripe.Checkout
         public string ClientReferenceId { get; set; }
 
         #region Expandable Customer
-
         [JsonIgnore]
         public string CustomerId
         {
@@ -104,6 +103,9 @@ namespace Stripe.Checkout
         internal ExpandableField<SetupIntent> InternalSetupIntent { get; set; }
         #endregion
 
+        [JsonProperty("submit_type")]
+        public string SubmitType { get; set; }
+
         #region Expandable Subscription
         [JsonIgnore]
         public string SubscriptionId
@@ -123,9 +125,6 @@ namespace Stripe.Checkout
         [JsonConverter(typeof(ExpandableFieldConverter<Subscription>))]
         internal ExpandableField<Subscription> InternalSubscription { get; set; }
         #endregion
-
-        [JsonProperty("submit_type")]
-        public string SubmitType { get; set; }
 
         [JsonProperty("success_url")]
         public string SuccessUrl { get; set; }

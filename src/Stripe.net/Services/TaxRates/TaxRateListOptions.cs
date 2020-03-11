@@ -14,7 +14,6 @@ namespace Stripe
         public bool? Inclusive { get; set; }
 
         [JsonProperty("percentage")]
-        [JsonConverter(typeof(AnyOfConverter))]
-        public AnyOf<decimal?, TaxRatePercentageRangeOptions> Percentage { get; set; }
+        public todo-thingy Percentage { get; set; }
     }
 }

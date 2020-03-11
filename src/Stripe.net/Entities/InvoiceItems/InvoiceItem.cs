@@ -88,7 +88,7 @@ namespace Stripe
         public bool Proration { get; set; }
 
         [JsonProperty("quantity")]
-        public long? Quantity { get; set; }
+        public long Quantity { get; set; }
 
         #region Expandable Subscription
         [JsonIgnore]
@@ -111,7 +111,7 @@ namespace Stripe
         #endregion
 
         [JsonProperty("subscription_item")]
-        public string SubscriptionItemId { get; set; }
+        public string SubscriptionItem { get; set; }
 
         [JsonProperty("tax_rates")]
         public List<TaxRate> TaxRates { get; set; }
@@ -123,6 +123,6 @@ namespace Stripe
         public long? UnitAmount { get; set; }
 
         [JsonProperty("unit_amount_decimal")]
-        public decimal? UnitAmountDecimal { get; set; }
+        public string UnitAmountDecimal { get; set; }
     }
 }

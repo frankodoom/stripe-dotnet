@@ -18,7 +18,7 @@ namespace Stripe
 
         [JsonProperty("billing_cycle_anchor")]
         [JsonConverter(typeof(DateTimeConverter))]
-        public DateTime? BillingCycleAnchor { get; set; }
+        public DateTime BillingCycleAnchor { get; set; }
 
         [JsonProperty("billing_thresholds")]
         public SubscriptionBillingThresholds BillingThresholds { get; set; }
@@ -43,11 +43,11 @@ namespace Stripe
 
         [JsonProperty("current_period_end")]
         [JsonConverter(typeof(DateTimeConverter))]
-        public DateTime? CurrentPeriodEnd { get; set; }
+        public DateTime CurrentPeriodEnd { get; set; }
 
         [JsonProperty("current_period_start")]
         [JsonConverter(typeof(DateTimeConverter))]
-        public DateTime? CurrentPeriodStart { get; set; }
+        public DateTime CurrentPeriodStart { get; set; }
 
         #region Expandable Customer
         [JsonIgnore]
@@ -152,7 +152,8 @@ namespace Stripe
         public Dictionary<string, string> Metadata { get; set; }
 
         [JsonProperty("next_pending_invoice_item_invoice")]
-        public long? NextPendingInvoiceItemInvoice { get; set; }
+        [JsonConverter(typeof(DateTimeConverter))]
+        public DateTime? NextPendingInvoiceItemInvoice { get; set; }
 
         [JsonProperty("pending_invoice_item_interval")]
         public SubscriptionPendingInvoiceItemInterval PendingInvoiceItemInterval { get; set; }
@@ -208,12 +209,11 @@ namespace Stripe
 
         [JsonProperty("start_date")]
         [JsonConverter(typeof(DateTimeConverter))]
-        public DateTime? StartDate { get; set; }
+        public DateTime StartDate { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }
 
-        [Obsolete("Use DefaultTaxRates")]
         [JsonProperty("tax_percent")]
         public decimal? TaxPercent { get; set; }
 

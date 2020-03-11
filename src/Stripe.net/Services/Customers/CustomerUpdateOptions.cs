@@ -37,6 +37,9 @@ namespace Stripe
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        [JsonProperty("next_invoice_sequence")]
+        public long? NextInvoiceSequence { get; set; }
+
         [JsonProperty("phone")]
         public string Phone { get; set; }
 
@@ -47,13 +50,12 @@ namespace Stripe
         public ShippingOptions Shipping { get; set; }
 
         [JsonProperty("source")]
-        [JsonConverter(typeof(AnyOfConverter))]
-        public AnyOf<string, CardCreateNestedOptions> Source { get; set; }
+        public string Source { get; set; }
 
         [JsonProperty("tax_exempt")]
         public string TaxExempt { get; set; }
 
-        [JsonProperty("validate")]
-        public bool? Validate { get; set; }
+        [JsonProperty("trial_end")]
+        public todo-thingy TrialEnd { get; set; }
     }
 }

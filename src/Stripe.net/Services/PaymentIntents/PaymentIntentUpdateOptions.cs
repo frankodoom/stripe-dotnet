@@ -28,6 +28,9 @@ namespace Stripe
         [JsonProperty("payment_method")]
         public string PaymentMethod { get; set; }
 
+        [JsonProperty("payment_method_options")]
+        public PaymentIntentPaymentMethodOptionsOptions PaymentMethodOptions { get; set; }
+
         [JsonProperty("payment_method_types")]
         public List<string> PaymentMethodTypes { get; set; }
 
@@ -41,7 +44,7 @@ namespace Stripe
         public string SetupFutureUsage { get; set; }
 
         [JsonProperty("shipping")]
-        public ChargeShippingOptions Shipping { get; set; }
+        public ShippingOptions Shipping { get; set; }
 
         [JsonProperty("source")]
         public string Source { get; set; }

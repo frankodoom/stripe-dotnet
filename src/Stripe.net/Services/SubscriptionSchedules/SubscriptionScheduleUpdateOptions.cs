@@ -13,9 +13,6 @@ namespace Stripe
         [JsonProperty("end_behavior")]
         public string EndBehavior { get; set; }
 
-        [JsonProperty("invoice_settings")]
-        public SubscriptionScheduleInvoiceSettingsOptions InvoiceSettings { get; set; }
-
         [JsonProperty("metadata")]
         public Dictionary<string, string> Metadata { get; set; }
 
@@ -24,5 +21,8 @@ namespace Stripe
 
         [JsonProperty("prorate")]
         public bool? Prorate { get; set; }
+
+        [JsonProperty("proration_behavior")]
+        public string ProrationBehavior { get; set; }
     }
 }
